@@ -38,11 +38,11 @@
 	{/each}
 	<div class="OpenLib"><p>Hits found on OpenLibrary: {form.openlibresults}</p></div>
 {/if}
-{#if !form?.success && !form['result']}
+
+<!-- {#if !form?.success && !form?.result}
 	{#if stoploading()}{/if}
 	<p class="OpenLib">No Results found</p>
-{/if}
-
+{/if} -->
 <style>
 	.Header {
 		text-align: center;
