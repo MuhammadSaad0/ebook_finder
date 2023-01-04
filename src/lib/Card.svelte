@@ -1,11 +1,12 @@
 <script>
+	import { fade, scale } from 'svelte/transition';
 	export let title = '';
 	export let author = '';
 	export let link = '';
 	export let pages = '';
 </script>
 
-<div class="card">
+<div class="card" in:scale={{ duration: 1000 }} out:fade={{ duration: 1500 }}>
 	<p class="Title">{title}</p>
 	<p class="Author">{author}</p>
 	{#if pages}

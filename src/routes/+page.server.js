@@ -1,6 +1,7 @@
 import libgen from 'libgen';
 export const actions = {
     search: async ({ request }) => {
+
         let data = await request.formData();
         let query = data.get('query');
         const options = {
@@ -9,7 +10,6 @@ export const actions = {
             count: 10,
             sort_by: 'year',
             reverse: true
-
         }
         console.log(query);
         let resultarray = [];
@@ -27,7 +27,10 @@ export const actions = {
                 resultarray.push(jsonobj);
             }
         } catch (err) {
+            // console.log("Here")
             console.error(err)
+            return { success: false }
+
         }
         const newquery = query.split(' ').join('+');
         const openlibresponse = await fetch(`http://openlibrary.org/search.json?q=${newquery}`);
