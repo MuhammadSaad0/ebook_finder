@@ -1,13 +1,9 @@
 <script>
 	import { enhance } from '$app/forms';
-	// @ts-ignore
 	import Card from '$lib/Card.svelte';
 	import { Pulse } from 'svelte-loading-spinners';
 	let search_query = '';
 	let old_query = '';
-	/**
-	 * @type {{ success: any; result:any, openlibresults:any}}
-	 */
 	export let form;
 	let loading = false;
 	function load() {
